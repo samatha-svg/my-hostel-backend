@@ -17,6 +17,7 @@ public class Complaint {
     @Column(nullable = false)
     private String rollNo;
 
+    private String studentEmail;
     private String studentPhone;
 
     @Column(nullable = false)
@@ -52,10 +53,11 @@ public class Complaint {
         this.priority = "Medium";
     }
 
-    public Complaint(String studentName, String rollNo, String studentPhone, String hostelBlock, 
-                     String roomNo, String category, String description, String priority) {
+    public Complaint(String studentName, String rollNo, String studentEmail, String studentPhone, 
+                     String hostelBlock, String roomNo, String category, String description, String priority) {
         this.studentName = studentName;
         this.rollNo = rollNo;
+        this.studentEmail = studentEmail;
         this.studentPhone = studentPhone;
         this.hostelBlock = hostelBlock;
         this.roomNo = roomNo;
@@ -99,6 +101,14 @@ public class Complaint {
 
     public void setRollNo(String rollNo) {
         this.rollNo = rollNo;
+    }
+
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+
+    public void setStudentEmail(String studentEmail) {
+        this.studentEmail = studentEmail;
     }
 
     public String getStudentPhone() {

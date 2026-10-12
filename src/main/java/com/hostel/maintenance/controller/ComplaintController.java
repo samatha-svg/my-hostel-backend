@@ -42,6 +42,12 @@ public class ComplaintController {
         return ResponseEntity.ok(complaintService.getComplaintsByRollNo(rollNo));
     }
 
+    // READ: Get complaints by Student Email
+    @GetMapping("/student/email/{email}")
+    public ResponseEntity<List<Complaint>> getComplaintsByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(complaintService.getComplaintsByEmail(email));
+    }
+
     // CREATE: Submit new complaint (Student)
     @PostMapping
     public ResponseEntity<Complaint> createComplaint(@RequestBody Complaint complaint) {

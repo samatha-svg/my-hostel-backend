@@ -33,6 +33,10 @@ public class ComplaintService {
         return complaintRepository.findByRollNo(rollNo);
     }
 
+    public List<Complaint> getComplaintsByEmail(String email) {
+        return complaintRepository.findByStudentEmail(email);
+    }
+
     public Complaint createComplaint(Complaint complaint) {
         if (complaint.getStatus() == null || complaint.getStatus().isEmpty()) {
             complaint.setStatus("Pending");
